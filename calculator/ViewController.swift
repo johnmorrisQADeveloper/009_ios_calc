@@ -1,20 +1,27 @@
-//
-//  ViewController.swift
-//  calculator
-//
-//  Created by John Morris on 07/04/2020.
-//  Copyright © 2020 John Morris. All rights reserved.
-//
 
 import UIKit
 
+enum modes {
+    case notSet
+    case addition
+    case substraction
+    case multiplication
+}
+
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    var labelString: String = "0"
+    var currentMode: modes = .notSet
+    var savedNum: Int = 0
+    var lastButtonWasMode: Bool = false
+    
+    func updateText() {
+        
     }
-
+    
+    func changeModes(newMode: modes) {
+        
+    }
 
 }
 
