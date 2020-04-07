@@ -22,7 +22,11 @@ class ViewController: UIViewController {
         if currentMode == .notSet {
             savedNum = labelInt
         }
-        label.text = "\(labelInt)"
+        let formatter: NumberFormatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        let num: NSNumber = NSNumber(value: labelInt)
+        
+        label.text = formatter.string(from: num)
     }
     
     func changeModes(newMode: modes) {
