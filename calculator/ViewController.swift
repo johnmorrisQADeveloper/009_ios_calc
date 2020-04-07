@@ -45,6 +45,11 @@ class ViewController: UIViewController {
         changeModes(newMode: .substraction)
     }
     
+    
+    @IBAction func didPressMultiply(_ sender: Any) {
+        changeModes(newMode: .multiplication)
+    }
+    
     @IBAction func didPressEquals(_ sender: Any) {
         guard let labelInt: Int = Int(labelString) else { label.text = "Error"; return }
         
@@ -55,6 +60,8 @@ class ViewController: UIViewController {
             savedNum += labelInt
         } else if currentMode == .substraction {
             savedNum -= labelInt
+        } else if currentMode == .multiplication {
+            savedNum *= labelInt
         }
         currentMode = .notSet
         labelString = "\(savedNum)"
@@ -79,8 +86,6 @@ class ViewController: UIViewController {
         }
         labelString = labelString.appending(stringValue)
         updateText()
-        
     }
-    
 }
 
