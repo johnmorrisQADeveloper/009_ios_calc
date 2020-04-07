@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     var lastButtonWasMode: Bool = false
     
     func updateText() {
-        
+        guard let labelInt: Int = Int(labelString) else { label.text = "Error"; return }
+        label.text = "\(labelInt)"
     }
     
     func changeModes(newMode: modes) {
@@ -41,7 +42,11 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func didPressButton(_ sender: UIButton) {
+    @IBAction func didPressNumber(_ sender: UIButton) {
+        guard let stringValue: String = sender.titleLabel?.text  else { label.text = "Error"; return}
+        
+        labelString = labelString.appending(stringValue)
+        updateText()
         
     }
     
